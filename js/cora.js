@@ -10,6 +10,7 @@
     var options = $.extend(defaults, options);
 
     var CoraElement = function(el) {
+      el.attr('contenteditable', 'true');
       this.elem = el;
       this.key = $(el).data('cora-key');
       this.url = $(el).data('cora-url');
@@ -35,7 +36,7 @@
       this.send = function() {
         $.ajax({
           url: this.url,
-          type: 'get',
+          type: 'post',
           data: {key: this.key, content: $(this.elem).html().trim()}
         }).success(function(){
 
