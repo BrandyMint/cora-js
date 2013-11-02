@@ -1,17 +1,7 @@
 {
-  "name": "cora",
-  "version": "0.0.1",
-  "homepage": "https://github.com/BrandyMint/cora-js",
-  "authors": [
-    "Eugeny"
-  ],
-  "description": "cora inplace editor",
+  "name": "cora-js",
+  "version": "0.0.0",
   "main": "js/cora.js",
-  "keywords": [
-    "inplace",
-    "editor"
-  ],
-  "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
