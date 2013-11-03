@@ -1,0 +1,8 @@
+.cora-content-wrapper {
+  position: relative;
+}
+.cora-save-button {
+  position: absolute;
+  display: inline;
+  z-index: 999;
+}

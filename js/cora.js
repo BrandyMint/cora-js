@@ -4,7 +4,10 @@
 (function ($) {
   $.fn.cora = function(options) {
     var defaults = {
-       frequency: 3000
+       frequency : 3000,
+       saveButtonText : 'Save',
+       saveButtonClass : '',
+       contentWrapperClass : ''
     };
 
     var options = $.extend(defaults, options);
@@ -13,18 +16,37 @@
       this.elem = el;
       this.key = $(el).data('cora-key');
       this.url = $(el).data('cora-url');
-      this.timer = null;
+      //this.timer = null;
+      $(this.elem.wrap('<div class="cora-content-wrapper ' + options.contentWrapperClass + '"></div>'));
+      this.wrapper = $(this.elem).parent('.cora-content-wrapper');
+      this.saveButton = null;
 
-      this.initTimer = function() {
+      // Timer initialization.
+      /*this.initTimer = function() {
         if (!this.timer) {
           this.timer = window.setTimeout($.proxy(function() {
             this.save()}, this), options.frequency
           );
         }
+      }*/
+
+      // Show save button.
+      this.showSaveButton = function() {
+        if (!this.saveButton) {
+          this.saveButton = $('<div class="cora-save-button ' + options.saveButtonClass + '">' + options.saveButtonText + '</div>');
+          this.saveButton.appendTo(this.wrapper);
+          console.log(this);
+          this.saveButton.click({el: this}, function(e){
+             e.data.el.send();
+             e.data.el.saveButton.remove();
+             e.data.el.saveButton = null;
+          });
+        }
       }
 
       $(this.elem).keyup({el: this}, function(e) {
-        e.data.el.initTimer();
+        //e.data.el.initTimer();
+        e.data.el.showSaveButton();
       });
 
       this.save = function() {
@@ -46,8 +68,6 @@
     $(this).each(function() {
       var obj = new CoraElement($(this));
     });
-
-
 
     return this;
   }
