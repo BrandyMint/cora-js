@@ -1,0 +1,10 @@
+{
+  "name": "cora",
+  "version": "0.0.6",
+  "main": "js/cora.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ]
+}
