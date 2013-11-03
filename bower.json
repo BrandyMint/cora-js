@@ -1,6 +1,6 @@
 {
-  "name": "cora-js",
-  "version": "0.0.4",
+  "name": "cora",
+  "version": "0.0.5",
   "main": "js/cora.js",
   "ignore": [
     "**/.*",
