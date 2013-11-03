@@ -3,6 +3,6 @@
 }
 .cora-save-button {
   position: absolute;
-  display: inline;
   z-index: 999;
+  margin-left: 0.5em;
 }

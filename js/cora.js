@@ -36,7 +36,7 @@
       // Show save button.
       this.showSaveButton = function() {
         if (!this.saveButton) {
-          this.saveButton = $('<div class="cora-save-button ' + options.saveButtonClass + '">' + options.saveButtonText + '</div>');
+          this.saveButton = $('<button class="cora-save-button ' + options.saveButtonClass + '">' + options.saveButtonText + '</button>');
           this.saveButton.appendTo(this.wrapper);
           console.log(this);
           this.saveButton.click({el: this}, function(e){
