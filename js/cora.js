@@ -10,7 +10,9 @@
     var options = $.extend(defaults, options);
 
     var CoraElement = function(el) {
-      el.attr('contenteditable', 'true');
+      $(el).attr('contenteditable', 'true');
+      $(el).addClass('cora-editable');
+
       this.elem = el;
       this.key = $(el).data('cora-key');
       this.url = $(el).data('cora-url');
