@@ -36,7 +36,7 @@
       this.send = function() {
         $.ajax({
           url: this.url,
-          type: 'post',
+          type: $(el).data('cora-method') || 'put',
           data: {key: this.key, content: $(this.elem).html().trim()}
         }).success(function(){
 
